@@ -1,9 +1,9 @@
 <?php
-include "proses.php";
-session_start();
-if(!isset($_SESSION['username'])){
-	header("Location:login.php");
-}
+// include "proses.php";
+// session_start();
+// if(!isset($_SESSION['username'])){
+// 	header("Location:login.php");
+// }
 
 ?>
 <!DOCTYPE html>
@@ -15,7 +15,7 @@ if(!isset($_SESSION['username'])){
 	<!-- Boxicons -->
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<!-- My CSS -->
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/jadwal.css">
 
 	<title>AdminHub</title>
 </head>
@@ -33,8 +33,8 @@ if(!isset($_SESSION['username'])){
         <div class="clock" id="clock">--:--:--</div>
 		</div>
 		<ul class="side-menu top">
-			<li class="active">
-				<a href="#">
+			<li >
+				<a href="dashboard.php">
 					<i class='bx bxs-dashboard' ></i>
 					<span class="text">Dashboard</span>
 				</a>
@@ -104,33 +104,61 @@ if(!isset($_SESSION['username'])){
 					<h1>Dashboard</h1>
 					<ul class="breadcrumb">
 						<li>
-							<a href="#">Dashboard</a>
+							<a href="jadwal.php">Jadwal Ekskul</a>
 						</li>
 						<li><i class='bx bx-chevron-right' ></i></li>
 						<li>
-							<a class="active" href="#">Home</a>
+							<a class="active" href="dashboard.php">Dashboard</a>
 						</li>
 					</ul>
-				</div>
-				<a href="#" class="btn-download">
-					<i class='bx bxs-cloud-download' ></i>
-					<span class="text">Download PDF</span>
-				</a>
-			</div>
-			<div class="profile-wrapper">
-			<div class="character-container">
-			<img src="img/orang.png" alt="">
-			</div>	
-			<div class="info-card">
-           <h1>Selamat Datang,<span><?php echo $_SESSION['username'] ?></span></h1>
-           <p class="description">
-            Andi adalah seorang pengembang perangkat lunak dengan pengalaman 5 tahun dalam pengembangan web dan mobile. Saat ini aktif sebagai mentor di komunitas pemrograman lokal.
-          </p>
-         </div>
-			</div>
-
-			</div>
 		</main>
+        </div>
+            <div class="container">
+        <h2><i class='bx bx-calendar'></i> Jadwal Ekstrakurikuler</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Hari</th>
+          <th>Ekstrakurikuler</th>
+          <th>Waktu</th>
+          <th>Tempat</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="Hari">Senin</td>
+          <td data-label="Ekstrakurikuler">Volix</td>
+          <td data-label="Waktu">15.30 - 17.00</td>
+          <td data-label="Tempat">Lapangan Basket</td>
+        </tr>
+        <tr>
+          <td data-label="Hari">Selasa</td>
+          <td data-label="Ekstrakurikuler">Futsal</td>
+          <td data-label="Waktu">15.30 - 17.00</td>
+          <td data-label="Tempat">Lapangan Indoor</td>
+        </tr>
+        <tr>
+          <td data-label="Hari">Rabu</td>
+          <td data-label="Ekstrakurikuler">Paskibra</td>
+          <td data-label="Waktu">15.30 - 17.00</td>
+          <td data-label="Tempat">Lapangan Upacara</td>
+        </tr>
+        <tr>
+          <td data-label="Hari">Kamis</td>
+          <td data-label="Ekstrakurikuler">Pramuka</td>
+          <td data-label="Waktu">15.30 - 17.30</td>
+          <td data-label="Tempat">Lapangan Serbaguna</td>
+        </tr>
+        <tr>
+          <td data-label="Hari">Jumat</td>
+          <td data-label="Ekstrakurikuler">Rohis</td>
+          <td data-label="Waktu">13.00 - 14.30</td>
+          <td data-label="Tempat">Ruang Rohani</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>        
 		<!-- MAIN -->
 	</section>
 	<!-- CONTENT -->
