@@ -16,6 +16,7 @@ if(!isset($_SESSION['username'])){
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<!-- My CSS -->
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/sidebar.css">
 
 	<title>AdminHub</title>
 </head>
