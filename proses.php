@@ -61,7 +61,7 @@ function daftarEkstrakurikuler($id_user, $id_ekskul) {
     $koneksi->close();
     
     if ($result) {
-        echo "<script>alert('Data berhasil disimpan!'); window.location.href='absenEkskul.php';</script>";
+        echo "<script>alert('Data berhasil disimpan!'); window.location.href='dashboard.php';</script>";
     } else {
         echo "<script>alert('Data gagal disimpan!'); window.location.href='daftarEkskul.php';</script>";
     }
@@ -79,7 +79,7 @@ function simpanPresensi($id_user, $id_ekskul, $tanggal, $deskripsi, $file_foto) 
         $stmt->bind_param("iisss", $id_user, $id_ekskul, $tanggal, $foto, $deskripsi);
 
         if ($stmt->execute()) {
-            echo "<script>alert('Absensi berhasil disimpan!'); window.location.href='absenekskul.php';</script>";
+            echo "<script>alert('Absensi berhasil disimpan!'); window.location.href='dashboard.php';</script>";
         } else {
             echo "<script>alert('Gagal menyimpan data absensi.'); window.location.href='absenekskul.php';</script>";
         }
@@ -123,7 +123,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $password = $_POST['password'] ?? '';
         
         if (loginUser($username, $password)) {
-            echo "<script>alert('Login berhasil!'); window.location.href='daftarEkskul.php';</script>";
+            echo "<script>alert('Login berhasil!'); window.location.href='dashboard.php';</script>";
         } else {
             echo "<script>alert('Username atau password salah!'); window.location.href='login.php';</script>";
         }

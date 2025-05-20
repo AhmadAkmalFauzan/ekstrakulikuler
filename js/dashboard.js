@@ -89,3 +89,24 @@ function updateClock() {
 
 setInterval(updateClock, 1000);
 updateClock();
+
+document.addEventListener("DOMContentLoaded", function () {
+	const switchMode = document.getElementById('switch-mode');
+	const body = document.body;
+
+	// Cek apakah mode gelap sudah disimpan di localStorage
+	if (localStorage.getItem("mode") === "dark") {
+		switchMode.checked = true;
+		body.classList.add('dark');
+	}
+
+	switchMode.addEventListener('change', function () {
+		if (this.checked) {
+			body.classList.add('dark');
+			localStorage.setItem("mode", "dark");
+		} else {
+			body.classList.remove('dark');
+			localStorage.setItem("mode", "light");
+		}
+	});
+});

@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+	--poppins: 'Poppins', sans-serif;
+	--lato: 'Lato', sans-serif;
+
+	--light: #F9F9F9;
+	--main-color: #4f46e5;
+	--blue: #3C91E6;
+	--light-blue: #CFE8FF;
+	--grey: #eee;
+	--dark-grey: #AAAAAA;
+	--dark: #342E37;
+	--red: #DB504A;
+	--yellow: #FFCE26;
+	--light-yellow: #FFF2C6;
+	--orange: #FD7238;
+	--light-orange: #FFE0D3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--grey); /* sama dengan abu-abu di style.css */
+    color: #111827;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Perbaikan untuk waktu di sidebar */
+.waktu {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    /* Tidak menambahkan margin atas atau bawah tambahan agar sesuai dengan sidebar.css */
+}
+
+.date {
+    font-size: 0.9rem;
+    color: #555;
+}
+  
+.clock {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0.3rem 0 1rem; /* Mengembalikan margin asli seperti di sidebar.css */
+    color: #4f46e5;
+}
+
+/* Menghapus pengaturan side-menu yang custom agar kembali ke sidebar.css asli */
+/* Bagian ini dihapus agar menggunakan pengaturan dari sidebar.css */
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.page-title h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    background: linear-gradient(45deg, #3b82f6, #10b981);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+.page-title p {
+    font-size: 1.1rem;
+    color: #6b7280;
+    font-weight: 300;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    perspective: 1000px;
+    padding-bottom: 30px; /* Menambahkan padding bawah */
+}
+
+.card {
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transform-style: preserve-3d;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.card:hover {
+    transform: translateY(-10px) rotateX(5deg);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    border-radius: 20px 20px 0 0;
+}
+
+.card:nth-child(1)::before {
+    background: linear-gradient(90deg, #3b82f6, #2563eb);
+}
+
+.card:nth-child(2)::before {
+    background: linear-gradient(90deg, #10b981, #059669);
+}
+
+.card:nth-child(3)::before {
+    background: linear-gradient(90deg, #f59e0b, #d97706);
+}
+
+.card-header {
+    position: relative;
+    padding: 35px 20px 25px;
+    text-align: center;
+    background-color: white;
+    z-index: 1;
+}
+
+.card-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.card.olahraga .card-title {
+  color: #2563eb; 
+}
+
+.card.keagamaan .card-title {
+  color: #059669; 
+}
+
+.card.wisata .card-title {
+  color: #d97706; 
+}
+
+.card.kepemimpinan .card-title {
+  color: #B22222; 
+}
+
+.card.kesenian .card-title {
+  color: #8A2BE2; 
+}
+
+.card.sosial .card-title {
+  color: #FA8072; 
+}
+
+.card-body {
+    padding: 5px 30px 30px;
+    background-color: white;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    position: relative;
+}
+
+.info-label {
+    font-weight: 500;
+    color: #4b5563;
+    width: 80px;
+    position: relative;
+}
+
+.info-value {
+    flex: 1;
+    position: relative;
+    font-weight: 400;
+    margin-left: 20px;
+}
+
+.info-item::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #e5e7eb, transparent);
+}
+
+.info-item:last-child::after {
+    display: none;
+}
+
+.card-category {
+    background-color: #f9fafb;
+    padding: 15px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #4b5563;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-top: 1px solid #f3f4f6;
+}
+
+@media (max-width: 768px) {
+    .page-title h1 {
+        font-size: 2.5rem;
+    }
+    
+    .card-container {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 25px;
+    }
+}
+
+#content main {
+	width: 100%;
+	padding: 36px 24px;
+	font-family: var(--poppins);
+	max-height: calc(100vh - 56px);
+	overflow-y: auto;
+}
+
+#content main .head-title {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	grid-gap: 16px;
+	flex-wrap: wrap;
+}
+
+#content main .head-title .left h1 {
+	font-size: 36px;
+	font-weight: 600;
+	margin-bottom: 10px;
+	color: var(--dark);
+}
+
+#content main .head-title .left .breadcrumb {
+	display: flex;
+	margin-bottom: 1rem;
+	align-items: center;
+	grid-gap: 16px;
+}
+
+#content main .head-title .left .breadcrumb li {
+	color: var(--dark);
+}
+
+#content main .head-title .left .breadcrumb li a {
+	color: var(--dark-grey);
+	pointer-events: none;
+}
+
+#content main .head-title .left .breadcrumb li a.active {
+	color: var(--main-color);
+	pointer-events: unset;
+}
+
+/* Dark Mode Enhancements */
+/* These styles need to be added to your jadw.css file */
+
+/* Basic dark mode styling */
+body.dark {
+    --light: #0C0C1E;
+    --grey: #060714;
+    --dark: #FBFBFB;
+    color: var(--dark);
+}
+
+/* Card styling for dark mode */
+body.dark .card {
+    background-color: #1a1a2e;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+body.dark .card-header {
+    background-color: #1a1a2e;
+}
+
+body.dark .card-body {
+    background-color: #1a1a2e;
+}
+
+body.dark .info-label {
+    color: #a0aec0;
+}
+
+body.dark .info-value {
+    color: #e2e8f0;
+}
+
+body.dark .info-item::after {
+    background: linear-gradient(to right, transparent, #2d3748, transparent);
+}
+
+body.dark .card-category {
+    background-color: #16213e;
+    color: #a0aec0;
+    border-top: 1px solid #2d3748;
+}
+
+/* Main content area for dark mode */
+body.dark #content main .head-title .left h1 {
+    color: var(--dark);
+}
+
+body.dark #content main .head-title .left .breadcrumb li {
+    color: var(--dark);
+}
+
+body.dark #content main .head-title .left .breadcrumb li a {
+    color: var(--dark-grey);
+}
+
+/* Date and clock styling for dark mode */
+body.dark .date {
+    color: #a0aec0;
+}
+
+body.dark .clock {
+    color: #6366f1; /* Lighter purple for dark mode */
+}
+
+/* Retain gradient colors for card borders */
+body.dark .card::before {
+    opacity: 0.8; /* Slightly reduce opacity for dark mode */
+}
+
+/* Specific card title colors for dark mode */
+body.dark .card.olahraga .card-title {
+    color: #60a5fa; /* Lighter blue */
+}
+
+body.dark .card.keagamaan .card-title {
+    color: #34d399; /* Lighter green */
+}
+
+body.dark .card.wisata .card-title {
+    color: #fbbf24; /* Lighter yellow */
+}
+
+body.dark .card.kepemimpinan .card-title {
+    color: #f87171; /* Lighter red */
+}
+
+body.dark .card.kesenian .card-title {
+    color: #c084fc; /* Lighter purple */
+}
+
+body.dark .card.sosial .card-title {
+    color: #fca5a5; /* Lighter salmon */
+}

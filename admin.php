@@ -86,11 +86,11 @@ if ($params) {
 $stmt->execute();
 $result = $stmt->get_result();
 
-// Daftar kelas (hardcoded)
-$kelasList = ['10-A', '10-B', '11-A', '11-B', '12-A', '12-B'];
+// Daftar kelas (hardcoded) 
+$kelasList = ['X ULW', 'X RPL 1', 'X RPL 2', 'X KUL 1', 'X KUL 2', 'X KUL 3', 'X PH 1', 'X PH 2', 'X PH 3', 'X BSN 1', 'X BSN 2', 'X BSN 3', 'XI ULW', 'XI RPL 1', 'XI RPL 2', 'XI KUL 1', 'XI KUL 2', 'XI KUL 3', 'XI PH 1', 'XI PH 2', 'XI PH 3', 'XI BSN 1', 'XI BSN 2', 'XI BSN 3'];
 
 // Daftar ekskul (hardcoded)
-$ekskulList = ['Basket', 'Sepak Bola', 'Futsal', 'Voli', 'Badminton', 'Tenis Meja', 'Robotik', 'Komputer', 'Jurnalistik', 'KIR', 'Pramuka', 'PMR', 'Karate', 'Silat', 'Taekwondo', 'Paduan Suara', 'Drama', 'Tari', 'Musik', 'Melukis'];
+$ekskulList = ['Voli', 'RohKris', 'Pencak Silat', 'Paskibra', 'Basket', 'Tari Tradisional', 'Ratoh Jaroe', 'Modern Dance', 'Pramuka', 'PMR', 'PIK-R', 'RohIs', 'Futsal'];
 ?>
 
 <!DOCTYPE html>

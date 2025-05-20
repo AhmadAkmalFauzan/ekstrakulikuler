@@ -30,7 +30,7 @@
 					<span class="text">Dashboard</span>
 				</a>
 			</li>
-			<li class="active">
+			<li>
 				<a href="profilEkskul.php">
 				<i class='bx bx-building-house'></i>
 					<span class="text">Profil ekskul</span>
@@ -42,7 +42,7 @@
 					<span class="text">Jadwal ekskul</span>
 				</a>
 			</li>
-			<li>
+			<li class="active">
 				<a href="history.php">
 				<i class='bx bx-time'></i>
 					<span class="text">History</span>

@@ -14,11 +14,16 @@ if(!isset($_SESSION['username'])){
 
 	<!-- Boxicons -->
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-	<!-- My CSS -->
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/sidebar.css">
+	<link rel="icon" type="image/x-icon" href="img/logo24.png">
+	<!-- Tambahkan ini di dalam tag <head> -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-	<title>AdminHub</title>
+	<!-- My CSS -->
+	 <link rel="stylesheet" href="css/side.css">
+	<link rel="stylesheet" href="css/dashboard.css">
+	
+
+	<title>X-stra</title>
 </head>
 <body>
 
@@ -27,7 +32,7 @@ if(!isset($_SESSION['username'])){
 	<section id="sidebar">
 		<a href="#" class="brand">
 			<i class='bx bxs-smile'></i>
-			<span class="text">AdminHub</span>
+			<span class="text">X-Track</span>
 		</a>
 		<div class="waktu">
 		<div class="date" id="date">--</div>
@@ -38,7 +43,7 @@ if(!isset($_SESSION['username'])){
 				<a href="#">
 					<i class='bx bxs-dashboard' ></i>
 					<span class="text">Dashboard</span>
-				</a>
+				</a>			
 			</li>
 			<li>
 				<a href="profilEkskul.php">
@@ -53,7 +58,7 @@ if(!isset($_SESSION['username'])){
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="history.php">
 				<i class='bx bx-time'></i>
 					<span class="text">History</span>
 				</a>
@@ -69,14 +74,9 @@ if(!isset($_SESSION['username'])){
 		</ul>
 	</section>
 	<!-- SIDEBAR -->
-
-
-
 	<!-- CONTENT -->
 	<section id="content">
 		<!-- NAVBAR -->
-			
-			
 		<nav>
 			<i class='bx bx-menu' ></i>
 			<a href="#" class="nav-link">Categories</a>
@@ -107,25 +107,23 @@ if(!isset($_SESSION['username'])){
 						<li>
 							<a href="#">Dashboard</a>
 						</li>
-						<li><i class='bx bx-chevron-right' ></i></li>
-						<li>
-							<a class="active" href="#">Home</a>
-						</li>
 					</ul>
 				</div>
-				<a href="#" class="btn-download">
-					<i class='bx bxs-cloud-download' ></i>
-					<span class="text">Download PDF</span>
-				</a>
+				<div class="right-buttons">
+					<a href="daftarEkskul.php" class="btn-dashboard">Registrasi</a>
+					<a href="absenEkskul.php" class="btn-dashboard">Absen</a>
+				</div>
 			</div>
 			<div class="profile-wrapper">
 			<div class="character-container">
 			<img src="img/orang.png" alt="">
 			</div>	
 			<div class="info-card">
-           <h1>Selamat Datang,<span><?php echo $_SESSION['username'] ?></span></h1>
+           <h1>Halo, <span><?php echo $_SESSION['username'] ?></span></h1>
+		   <h1>Selamat Datang!</h1>
            <p class="description">
-            Andi adalah seorang pengembang perangkat lunak dengan pengalaman 5 tahun dalam pengembangan web dan mobile. Saat ini aktif sebagai mentor di komunitas pemrograman lokal.
+			Selamat Datang di situs resmi kegiatan Ekstrakulikuler!
+			Temukan informasi lengkap tentang berbagai kegiatan Ekstrakulikuler
           </p>
          </div>
 			</div>

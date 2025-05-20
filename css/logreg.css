@@ -10,88 +10,21 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background: url('background.jpg') no-repeat center center fixed; /* Ganti dengan path gambar latar Anda */
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.container {
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    padding: 40px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    width: 400px;
-    text-align: center;
-}
-
-.logo {
-    width: 100px; /* Sesuaikan ukuran logo */
-    margin-bottom: 20px;
-}
-
-h1 {
-    margin-bottom: 20px;
-    color:  var(--main-color);
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-input {
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-select{
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-select:focus{
-    outline: none;
-}
-
-input:focus {
-    outline: none;
-}
-
-button {
-    padding: 10px;
-    background: var(--main-color);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background: var(--second-color);
-}
-
-p {
-    margin-top: 20px;
-}
-
-a {
-    color: var(--main-color);
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-    transform: translateY(-10px);
-}
+      font-family: 'Poppins', sans-serif;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in {
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+    .btn{
+        color: #fff;
+        margin-left: 280px;
+    }
+    img{
+        width: 600px; /* Sesuaikan dengan lebar container */
+        height: 500px; /* Sesuaikan dengan tinggi container */
+        object-fit: cover;
+    }

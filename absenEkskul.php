@@ -29,14 +29,14 @@ $kelas = $data['kelas'];
 $nama_ekskul = $data['nama_ekskul'];
 
 $stmt->close();
-?>
+?>  
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Absen Ekskul</title>
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="css/styleAbsenDaftar.css">
 </head>
 <body>
     <div class="form-container">
