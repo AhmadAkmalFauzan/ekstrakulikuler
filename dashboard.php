@@ -17,8 +17,6 @@ if (!isset($_SESSION['id_user'])) {
 // Cek apakah user sudah terdaftar di ekstrakurikuler
 $isRegistered = isRegisteredInAnyEkskul($_SESSION['id_user']);
 
-// Debug - uncomment untuk testing jika diperlukan
-// echo "<!-- Debug: User ID = " . $_SESSION['id_user'] . ", isRegistered = " . ($isRegistered ? 'true' : 'false') . " -->";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +34,7 @@ $isRegistered = isRegisteredInAnyEkskul($_SESSION['id_user']);
      <link rel="stylesheet" href="css/side.css">
     <link rel="stylesheet" href="css/dashboard.css">
 
-    <title>X-stra</title>
+    <title>X-Track</title>
     
     <style>
         .notification-banner {
@@ -196,21 +194,21 @@ $isRegistered = isRegisteredInAnyEkskul($_SESSION['id_user']);
         <!-- NAVBAR -->
         <nav>
             <i class='bx bx-menu' ></i>
-            <a href="#" class="nav-link">Categories</a>
+            <!-- <a href="#" class="nav-link">Categories</a>
             <form action="#">
                 <div class="form-input">
                     <input type="search" placeholder="Search...">
                     <button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
                 </div>
-            </form>
+            </form> -->
             <input type="checkbox" id="switch-mode" hidden>
             <label for="switch-mode" class="switch-mode"></label>
-            <a href="#" class="notification">
+            <!-- <a href="#" class="notification">
                 <i class='bx bxs-bell' ></i>
                 <span class="num">8</span>
-            </a>
+            </a> -->
             <a href="profil.php" class="profile">
-                <img src="img/people.png">
+                <i class='bx bx-user-circle' style="font-size: 32px; color: #000;"></i>
             </a>
         </nav>
         <!-- NAVBAR -->
@@ -280,8 +278,51 @@ $isRegistered = isRegisteredInAnyEkskul($_SESSION['id_user']);
     </section>
     <!-- CONTENT -->
 
-    <script src="js/dashboard.js"></script>
     <script>
+        function updateClock() {
+            const now = new Date();
+            const date = now.toLocaleDateString('en-GB', {
+            day: '2-digit', month: 'short', year: 'numeric'
+            });
+            const time = now.toLocaleTimeString('en-GB', {
+            hour: '2-digit', minute: '2-digit', second: '2-digit'
+            });
+            document.getElementById('date').textContent = date;
+            document.getElementById('clock').textContent = time;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        <?php if ($isRegistered): ?>
+            setTimeout(function() {
+                closeSuccessBanner();
+            }, 7000);
+        <?php endif; ?>
+
+        // Dark mode toggle
+        const switchMode = document.getElementById('switch-mode');
+        switchMode.addEventListener('change', function() {
+            if(this.checked) {
+                document.body.classList.add('dark');
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                document.body.classList.remove('dark');
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        });
+
+        // Periksa localStorage untuk mode sebelumnya
+        if(localStorage.getItem('darkMode') === 'enabled') {
+            document.body.classList.add('dark');
+            document.getElementById('switch-mode').checked = true;
+        }
+
+        const toggle = document.getElementById('toggle-mode');
+        toggle.addEventListener('change', function() {
+            document.body.classList.toggle('dark');
+        });
+
         function closeNotification() {
             document.getElementById('notificationBanner').style.display = 'none';
         }
@@ -292,13 +333,56 @@ $isRegistered = isRegisteredInAnyEkskul($_SESSION['id_user']);
                 banner.style.display = 'none';
             }
         }
+    </script>
 
-        // Auto hide success banner after 10 seconds
-        <?php if ($isRegistered): ?>
-        setTimeout(function() {
-            closeSuccessBanner();
-        }, 10000);
-        <?php endif; ?>
+    <script>
+        const allSideMenu = document.querySelectorAll('#sidebar .side-menu.top li a');
+
+        allSideMenu.forEach(item=> {
+            const li = item.parentElement;
+
+            item.addEventListener('click', function () {
+                allSideMenu.forEach(i=> {
+                    i.parentElement.classList.remove('active');
+                })
+                li.classList.add('active');
+            })
+        });
+
+        // TOGGLE SIDEBAR
+        const menuBar = document.querySelector('#content nav .bx.bx-menu');
+        const sidebar = document.getElementById('sidebar');
+
+        menuBar.addEventListener('click', function () {
+            sidebar.classList.toggle('hide');
+        })
+
+        searchButton.addEventListener('click', function (e) {
+            if(window.innerWidth < 576) {
+                e.preventDefault();
+                searchForm.classList.toggle('show');
+                if(searchForm.classList.contains('show')) {
+                    searchButtonIcon.classList.replace('bx-search', 'bx-x');
+                } else {
+                    searchButtonIcon.classList.replace('bx-x', 'bx-search');
+                }
+            }
+        })
+
+        if(window.innerWidth < 768) {
+            sidebar.classList.add('hide');
+        } else if(window.innerWidth > 576) {
+            searchButtonIcon.classList.replace('bx-x', 'bx-search');
+            searchForm.classList.remove('show');
+        }
+
+
+        window.addEventListener('resize', function () {
+            if(this.innerWidth > 576) {
+                searchButtonIcon.classList.replace('bx-x', 'bx-search');
+                searchForm.classList.remove('show');
+            }
+        })
     </script>
 </body>
 </html>

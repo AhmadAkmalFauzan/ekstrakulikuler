@@ -17,7 +17,6 @@ li {
 :root {
 	--poppins: 'Poppins', sans-serif;
 	--lato: 'Lato', sans-serif;
-
 	--light: #F9F9F9;
 	--main-color: #4f46e5;
 	--blue: #3C91E6;
@@ -159,8 +158,6 @@ body {
 	grid-gap: 10px;
 	font-weight: 500;
 }
-
-
 
 
 #content main .box-info {

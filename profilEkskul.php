@@ -9,7 +9,7 @@
 	<!-- My CSS -->
 	<link rel="stylesheet" href="css/side.css">
 
-	<title>Sidebar</title>
+	<title>X-Track</title>
 </head>
 <body>
 
@@ -63,25 +63,41 @@
 		<!-- NAVBAR -->
 		<nav>
 			<i class='bx bx-menu' ></i>
-			<a href="#" class="nav-link">Categories</a>
-			<form action="#">
+			<!-- <a href="#" class="nav-link">Categories</a>
+			 <form action="#">
 				<div class="form-input">
 					<input type="search" placeholder="Search...">
 					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
 				</div>
-			</form>
+			</form> -->
 			<input type="checkbox" id="switch-mode" hidden>
 			<label for="switch-mode" class="switch-mode"></label>
-			<a href="#" class="notification">
+			<!-- <a href="#" class="notification">
 				<i class='bx bxs-bell' ></i>
 				<span class="num">8</span>
-			</a>
+			</a> -->
 			<a href="#" class="profile">
-				<img src="img/people.png">
-			</a>
+                <i class='bx bx-user-circle' style="font-size: 32px; color: #000;"></i>
+            </a>
 		</nav>
 
 <script src="js/dashboard.js"></script>
+<script>
+	function updateClock() {
+		const now = new Date();
+		const date = now.toLocaleDateString('en-GB', {
+		day: '2-digit', month: 'short', year: 'numeric'
+		});
+		const time = now.toLocaleTimeString('en-GB', {
+		hour: '2-digit', minute: '2-digit', second: '2-digit'
+		});
+		document.getElementById('date').textContent = date;
+		document.getElementById('clock').textContent = time;
+	}
+
+	setInterval(updateClock, 1000);
+	updateClock();
+</script>
 
 </body>
 </html>
