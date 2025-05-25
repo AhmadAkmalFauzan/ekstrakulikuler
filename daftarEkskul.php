@@ -77,6 +77,7 @@ $koneksi->close();
             <input type="hidden" name="action" value="daftar_ekskul">
             
             <button type="submit" class="submit-btn">Daftar</button>
+            <a href="dashboard.php" class="back-btn">Kembali</a>
         </div>
     </form>
 </body>

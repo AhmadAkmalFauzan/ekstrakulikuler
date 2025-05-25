@@ -84,6 +84,7 @@ $stmt->close();
             </div>
 
             <button type="submit" class="submit-btn">Kirim</button>
+            <a href="dashboard.php" class="back-btn">Kembali</a>
         </form>
     </div>
 

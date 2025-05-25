@@ -331,7 +331,7 @@ li {
 		color: var(--light);
 		background: var(--red);
 	}
-
+	
 	#content nav form.show ~ .notification,
 	#content nav form.show ~ .profile {
 		display: none;

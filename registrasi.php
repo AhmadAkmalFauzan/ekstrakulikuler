@@ -89,5 +89,35 @@ if (isset($_POST['submit'])) {
       </p>
     </form>
   </div>
+
+  <script>
+      // Password toggle functionality
+  document.addEventListener('DOMContentLoaded', function() {
+      // Find all password toggle buttons
+      const toggleButtons = document.querySelectorAll('button[type="button"]');
+      
+      toggleButtons.forEach(button => {
+          // Check if this button is next to a password input
+          const passwordInput = button.parentElement.querySelector('input[type="password"], input[type="text"]');
+          
+          if (passwordInput && (passwordInput.type === 'password' || passwordInput.name === 'password')) {
+              button.addEventListener('click', function() {
+                  togglePassword(passwordInput, button);
+              });
+          }
+      });
+  });
+
+  function togglePassword(passwordInput, toggleButton) {
+      if (passwordInput.type === 'password') {
+          // Show password
+          passwordInput.type = 'text';
+      } else {
+          // Hide password
+          passwordInput.type = 'password';
+      }
+  }
+  </script>
+  
 </body>
 </html>
